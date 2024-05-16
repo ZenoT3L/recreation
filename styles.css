@@ -11,7 +11,7 @@ body{
     font-size: 10px;
     width: 40em;
     height: 40em;
-    position: relative;
+    position: absolute;
 }
 .sun{
     position: absolute;
@@ -23,32 +23,68 @@ body{
     border-radius: 50%;
     box-shadow: 0 0 3em white;
 }
-.earth, .moon{
+.earth, .moon, .mercury, .venus, .mars{
     position: absolute;
     border-style: solid;
-    border-color: white transparent transparent transparent;
+    border-color: white transparent transparent;
     border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
 }
+
+.mercury{
+    width: 18em;
+    height: 18em;
+    top: 11em;
+    left: 11em;
+    animation: orbit 8.8s linear infinite;
+
+}
+
+.venus{
+    width: 25em;
+    height: 25em;
+    top: 7.5em;
+    left: 7.5em;
+    animation: orbit 16.7s linear infinite;
+}
+
 .earth{
-    top: 5em;
-    left: 5em;
-    width: 30em;
-    height: 30em;
+    top: 4em;
+    left: 4em;
+    width: 32em;
+    height: 32em;
     animation: orbit 36.5s linear infinite;
 }
 .moon{
-    top: 0;
-    right: 0;
-    width: 8em;
-    height: 8em;
+    top: 1.7em;
+    right: 1.7em;
+    width: 5em;
+    height: 5em;
     animation: orbit 2.7s linear infinite ;
 }
-.earth::before, .moon::before{
+
+.earth::before, .moon::before, .mercury::before, .venus::before{
     content: '';
     position: absolute;
     border-radius: 50%;
 }
+
+.mercury::before{
+    top: 1.5em;
+    left: 14em;
+    width: 2em;
+    height: 2em;
+    background-color: orangered;
+}
+
+.venus::before{
+    width: 3em;
+    height: 3em;
+    background-color: white;
+    top: 1.9em;
+    left: 20em;
+}
+
 .earth::before{
     top: 2.8em;
     right: 2.8em;
@@ -57,7 +93,7 @@ body{
     background-color: aqua;
 }
 .moon::before{
-    top: 0.8em;
+    top: 0.1em;
     right: 0.2em;
     width: 1.2em;
     height: 1.2em;
@@ -69,4 +105,9 @@ body{
             360deg
         );
     }
+}
+
+.bottom{
+    margin-top: 800px;
+    color: green;
 }
